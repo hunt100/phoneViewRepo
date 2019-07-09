@@ -1,0 +1,17 @@
+<!-- <app-phone-detail [selectedPhone]="selectedPhone"></app-phone-detail> -->
+
+<!-- <h2>Many objects</h2>
+<ul class="phones">
+    <li *ngFor="let phone of phones" (click)="onSelect(phone)" [class.selected]="phone === selectedPhone">
+        <span class="badge">{{phone.id}}</span> {{phone.name}} - {{phone.price}}
+    </li>
+</ul> -->
+
+<h2>Many objects</h2>
+<ul class="phones">
+    <li *ngFor="let phone of phones">
+        <a routerLink="/detail/{{phone.id}}">
+        <span class="badge">{{phone.id}}</span> {{phone.name}} - {{phone.price}}
+        </a>
+    </li>
+</ul>
