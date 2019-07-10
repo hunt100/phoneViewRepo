@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PhoneService } from '../phone.service';
-import { Phone } from '../entity/phone';
+import { Phone } from '../model/phone';
 
 @Component({
   selector: 'app-dashboard',

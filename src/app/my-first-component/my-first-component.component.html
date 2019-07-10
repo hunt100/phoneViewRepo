@@ -13,5 +13,17 @@
         <a routerLink="/detail/{{phone.id}}">
         <span class="badge">{{phone.id}}</span> {{phone.name}} - {{phone.price}}
         </a>
+        <button class="delete" title="delete phone" (click)="delete(phone)">x</button>
     </li>
 </ul>
+
+<div>
+    <label> Phone name:
+        <input type="text" #phoneName>
+    </label>
+    <label>Phone cost:
+        <input type="number" #phoneCost>
+    </label>
+</div>
+
+<button (click)="add(phoneName.value, phoneCost.value); phoneName.value=''; phoneCost.value = ''" >add</button>

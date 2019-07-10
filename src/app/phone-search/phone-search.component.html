@@ -1,0 +1,11 @@
+<div id="search-component">
+    <h4><label for="search-box">Phone search</label></h4>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+</div>
+<ul class="search-result">
+    <li *ngFor="let phone of phones$ | async">
+        <a routerLink="/detail/{{phone.id}}">
+            {{phone.name}} - {{phone.price}}
+        </a>
+    </li>
+</ul>

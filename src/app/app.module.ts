@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
@@ -12,6 +12,8 @@ import { from } from 'rxjs';
 import { PhoneDetailComponent } from './phone-detail/phone-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PhoneSearchComponent } from './phone-search/phone-search.component';
+import { NameEditorComponent } from './name-editor/name-editor.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MyFirstComponentComponent,
     PhoneDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    PhoneSearchComponent,
+    NameEditorComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: false}
     )

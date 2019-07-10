@@ -1,4 +1,4 @@
-import { Phone } from './entity/phone';
+import { Phone } from './model/phone';
 
 export const PHONES: Phone[] = [
     {id:11, name: "Meizu a2", price: 12.50},

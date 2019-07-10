@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Phone } from '../entity/phone';
+import { Phone } from '../model/phone';
 import { ActivatedRoute } from '@angular/router';
 import { PhoneService } from '../phone.service';
 import { Location } from '@angular/common';
@@ -17,9 +17,13 @@ export class PhoneDetailComponent implements OnInit {
     private location: Location
   ) { }
 
-  getHero():void {
+  getPhone():void {
     const id = +this.route.snapshot.paramMap.get('id'); //Route parameters are always strings. The JavaScript (+) operator converts the string to a number, which is what a hero id should be.
     this.phoneService.getPhone(id).subscribe(phone => this.selectedPhone = phone);
+  }
+
+  save():void {
+    this.phoneService.updatePhone(this.selectedPhone).subscribe(() => this.goBack());
   }
 
   goBack():void {
@@ -27,7 +31,7 @@ export class PhoneDetailComponent implements OnInit {
   }
 
   ngOnInit():void {
-    this.getHero();
+    this.getPhone();
   }
 
 }
